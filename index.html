@@ -11,29 +11,55 @@
 </head>
 
 <body>
+  <img src="img/04121901.jpg" class="i041219 archive hidden" width="300px" onclick="hide(this)">
+  <img src="img/04031901.jpg" class="i040319 archive hidden" width="400px" onclick="hide(this)">
+  <img src="img/04031902.jpg" class="i040319 archive hidden" width="350px" onclick="hide(this)">
+  <img src="img/04031903.jpg" class="i040319 archive hidden" width="250px" onclick="hide(this)">
+  <img src="img/03061901.jpg" class="i030619 archive hidden" width="300px" onclick="hide(this)">
+  <img src="img/03061902.jpg" class="i030619 archive hidden" width="400px" onclick="hide(this)">
+  <img src="img/03051901.jpg" class="i030519 archive hidden" width="150px" onclick="hide(this)">
+  <img src="img/03051902.jpg" class="i030519 archive hidden" width="400px" onclick="hide(this)">
+  <img src="img/03051903.jpg" class="i030519 archive hidden" width="300px" onclick="hide(this)">
+  <img src="img/02081901.jpg" class="i020819 archive hidden" width="350px" onclick="hide(this)">
+  <img src="img/02081902.jpg" class="i020819 archive hidden" width="200px" onclick="hide(this)">
+
+  <img src="img/12061801.jpg" class="i120618 archive hidden" width="300px" onclick="hide(this)">
+  <img src="img/11121801.jpg" class="i111218 archive hidden" width="300px" onclick="hide(this)">
+  <img src="img/11121802.jpg" class="i111218 archive hidden" width="300px" onclick="hide(this)">
+  <img src="img/11121803.jpg" class="i111218 archive hidden" width="300px" onclick="hide(this)">
+  <img src="img/11121804.jpg" class="i111218 archive hidden" width="300px" onclick="hide(this)">
+  <img src="img/10181801.png" class="i101818 archive hidden" width="300px" onclick="hide(this)">
+
+  <img src="img/07111701.jpg" class="i071117 archive hidden" width="300px" onclick="hide(this)">
+  <img src="img/07111702.jpg" class="i071117 archive hidden" width="600px" onclick="hide(this)">
+
+  <img src="img/cats01.png" class="icats archive hidden" width="800px" onclick="hide(this)">
+  <img src="img/cats02.png" class="icats archive hidden" width="800px" onclick="hide(this)">
+
   <div class="header">
     <h1>Some Things Abrewing</h1>
     <p>New Features of Creative Ethics</p>
   </div>
-	
+
   <hr class="brew">
+
   <div class="row">
     <div class="col-10">
       <div class="item-l">
         <h2>Image Archive</h2>
-        <p id="041219">04 12 19</p>
-        <p id="040319">04 03 19</p>
-        <p id="030619">03 06 19</p>
-        <p id="030519">03 05 19</p>
-        <p id="020819">02 08 19</p>
+        <p id="041219" onclick="float(this)">04 12 19</p>
+        <p id="040319" onclick="float(this)">04 03 19</p>
+        <p id="030619" onclick="float(this)">03 06 19</p>
+        <p id="030519" onclick="float(this)">03 05 19</p>
+        <p id="020819" onclick="float(this)">02 08 19</p>
 
-        <p id="120618">12 06 18</p>
-        <p id="111218">11 12 18</p>
-        <p id="101818">10 18 18</p>
+        <p id="120618" onclick="float(this)">12 06 18</p>
+        <p id="111218" onclick="float(this)">11 12 18</p>
+        <p id="101818" onclick="float(this)">10 18 18</p>
 
-        <p id="071117">07 11 17</p>
+        <p id="071117" onclick="float(this)">07 11 17</p>
         <br>
-        <p id="??????">?? ?? ??</p>
+        <p id="cats" onclick="float(this)">?? ?? ??</p>
       </div>
     </div>
     <div class="col-9">
@@ -134,7 +160,7 @@
         <div class="dropdown-content">
           <p>03 06 19</p>
           <p class="author">Ian Bogost</p>
-          <p>he images are huge and square and harrowing: a form, reminiscent of a face, engulfed in fiery red-and-yellow currents; a head emerging from a cape collared with glitchy feathers, from which a shape suggestive of a hand protrudes; a heap of gold and scarlet mottles, convincing as fabric, propping up a face with grievous, angular features. These are part of “Faceless Portraits Transcending Time,” an exhibition of prints recently shown at the HG Contemporary gallery in Chelsea, the epicenter of New York’s contemporary-art world. All of them were created by a computer.<br>The catalog calls the show a “collaboration between an artificial intelligence named AICAN and its creator, Dr. Ahmed Elgammal,” a move meant to spotlight, and anthropomorphize, the machine-learning algorithm that did most of the work. According to HG Contemporary, it’s the first solo gallery exhibit devoted to an AI artist.</p>
+          <p>The images are huge and square and harrowing: a form, reminiscent of a face, engulfed in fiery red-and-yellow currents; a head emerging from a cape collared with glitchy feathers, from which a shape suggestive of a hand protrudes; a heap of gold and scarlet mottles, convincing as fabric, propping up a face with grievous, angular features. These are part of “Faceless Portraits Transcending Time,” an exhibition of prints recently shown at the HG Contemporary gallery in Chelsea, the epicenter of New York’s contemporary-art world. All of them were created by a computer.<br>The catalog calls the show a “collaboration between an artificial intelligence named AICAN and its creator, Dr. Ahmed Elgammal,” a move meant to spotlight, and anthropomorphize, the machine-learning algorithm that did most of the work. According to HG Contemporary, it’s the first solo gallery exhibit devoted to an AI artist.</p>
           <p><a href="https://www.theatlantic.com/technology/archive/2019/03/ai-created-art-invades-chelsea-gallery-scene/584134/" target="_blank">Read source</a></p>
         </div>
       </div>
@@ -143,10 +169,23 @@
 </div>
 
 <script>
-  function drop(element) {
-    var content = element.getElementsByClassName('dropdown-content');
+  function drop(el) {
+    var content = el.getElementsByClassName('dropdown-content');
     content[0].classList.toggle("show");
   };
+
+  function float(el) {
+    var id = el.id;
+    console.log(id);
+    var img = document.getElementsByClassName('i'+id);
+    for (let i = 0; i < img.length; i++) {
+      img[i].classList.toggle("hidden");
+    }
+  }
+
+  function hide(el) {
+    el.classList.toggle("hidden");
+  }
 </script>
 
 </body>
