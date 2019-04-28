@@ -20,6 +20,7 @@ html, body {
   margin: 0;
   background-color: snow;
   overflow-x: hidden;
+  cursor: help;
 }
 h1, h2, h3 {
   font-family: "Ajax", serif;
